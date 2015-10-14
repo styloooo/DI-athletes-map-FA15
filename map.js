@@ -365,6 +365,6 @@ var map = new Datamap({
 	 }
 	}
 });
-
+//ddd
 
 map.labels();
