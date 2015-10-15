@@ -323,7 +323,7 @@ var map = new Datamap({
 	highlightBorderColor: '#B7B7B7',
 	popupTemplate: function(geography, data) {
 	   if(!data) return '<div class="hoverinfo"><strong>No data!</strong></div>';
-	   else if(data.names.length <= 0) return '<div class="hoverinfo"><strong>'+geography.properties.name+'</strong><br>No athletes here</strong></div>';
+	   else if(data.names.length <= 0) return '<div class="hoverinfo"><strong>'+geography.properties.name+'</strong><br>No Illinois athletes from here</strong></div>';
 	   if(data.names.length < 30) return '<div class="hoverinfo">' + '<strong>' + geography.properties.name + '</strong>' + '<br>' + htmlizeNames(data.names) + '</div>';
 	   else return '<div id="longbox" class="hoverinfo"><strong>' + geography.properties.name + '</strong><br>' + htmlizeNames(data.names) + '</div>'
 	 }
