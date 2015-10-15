@@ -313,7 +313,7 @@ var map = new Datamap({
 		'lo-med': '#44afdb',
 		'med': '#2380a5',
 		'hi-med': '#0e6b90',
-		'hi': '#07445c' 
+		'hi': '#05739c' 
 	},
 	data: athletes,
 	geographyConfig: {
