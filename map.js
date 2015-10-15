@@ -253,20 +253,21 @@ var athletes = {
 //Sets fills depending on number of athletes from state
 for (item in athletes) {
 	var num = athletes[item].names.length;
+  console.log(item, num);
 	//var value = paletteScale(num);
 	if(num >= 1 && num < 10){
 		athletes[item].fillKey = 'low';
 	}
-	else if(num > 11 && num < 20){
+	else if(num >= 10 && num < 20){
 		athletes[item].fillKey = 'lo-med';
 	}
-	else if(num > 21 && num < 30){
+	else if(num >= 20 && num < 30){
 		athletes[item].fillKey = 'med';
 	}
-	else if(num > 31 && num < 40){
+	else if(num >= 30 && num < 40){
 		athletes[item].fillKey = 'hi-med';
 	}
-	else if(num > 41 || item == 'IL'){
+	else if(num >= 40 || item == 'IL'){
 		athletes[item].fillKey = 'hi';
 	}
 	else{
@@ -322,7 +323,7 @@ var map = new Datamap({
 	highlightBorderColor: '#B7B7B7',
 	popupTemplate: function(geography, data) {
 	   if(!data) return '<div class="hoverinfo"><strong>No data!</strong></div>';
-	   else if(data.names.length <= 0) return '<div class="hoverinfo"><strong>'+geography.properties.name+'</strong><br>No athletes here!</strong></div>';
+	   else if(data.names.length <= 0) return '<div class="hoverinfo"><strong>'+geography.properties.name+'</strong><br>No athletes here</strong></div>';
 	   if(data.names.length < 30) return '<div class="hoverinfo">' + '<strong>' + geography.properties.name + '</strong>' + '<br>' + htmlizeNames(data.names) + '</div>';
 	   else return '<div id="longbox" class="hoverinfo"><strong>' + geography.properties.name + '</strong><br>' + htmlizeNames(data.names) + '</div>'
 	 }
