@@ -250,37 +250,7 @@ var athletes = {
   }
 };
 
-
-// function frequency(athletes) {
-// 	var miniList = [];
-// 	for (key in athletes){
-// 		//var miniList = [];
-// 		//miniList.push(key);
-// 		miniList.push(athletes[key].names.length);
-// 		//howMany.push(miniList);
-// 	}	
-// 	return miniList;
-// }
-//We need to calculate the pallet we used base on ATH frequency
-// var athleteFreq = frequency(athletes);
-
-// var minValue = 100;
-// var maxValue = 0;
-
-// for(var i = 0; i < athleteFreq.length; i++){
-// 	if(athleteFreq[i] < minValue){
-// 		minValue = athleteFreq[i];
-// 	}
-// 	if(athleteFreq[i] > maxValue){
-// 		maxValue = athleteFreq[i];
-// 	}
-// }
-
-//Create color pallet function 
-// var paletteScale = d3.scale.linear()
-// 	.domain([minValue, maxValue])
-// 	.range(["#EFEFFF", "#02386F"]);
-
+//Sets fills depending on number of athletes from state
 for (item in athletes) {
 	var num = athletes[item].names.length;
 	//var value = paletteScale(num);
@@ -302,13 +272,9 @@ for (item in athletes) {
 	else{
 		athletes[item].fillKey = 'none';
 	}
-	//console.log(athletes[item].fill);
-	//console.log(athletes[item].fill);
 }
 
-//console.log(athletes);
-//athletes = applyFrequencyFill(athletes);
-
+//Sends names back with HTML formatting for hoverbox 
 //Implement special handling for >50 (IL)
 function htmlizeNames(names){
 	//console.log(names);
@@ -335,6 +301,7 @@ function htmlizeNames(names){
 	return output;
 }
 
+//MAPS!
 var map = new Datamap({
 	element: document.getElementById('container'),
 	scope: 'usa',
@@ -352,10 +319,6 @@ var map = new Datamap({
 		borderColor: '#DEDEDE',
 		highlightBorderWidth: 2,
 		highlightOnHover: true,
-		//popupOnHover: true,
-		// highlightFillColor: function(geo) {
-		// 	return '#F5F5F5';
-		// },
 	highlightBorderColor: '#B7B7B7',
 	popupTemplate: function(geography, data) {
 	   if(!data) return '<div class="hoverinfo"><strong>No data!</strong></div>';
@@ -365,6 +328,5 @@ var map = new Datamap({
 	 }
 	}
 });
-//ddd
 
 map.labels();

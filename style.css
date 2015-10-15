@@ -6,3 +6,13 @@
     -moz-column-gap: 10px; /* Firefox */
     column-gap: 10px;
 }
+
+#credit {
+	font-size: .6em;
+	font-family: sans-serif;
+	float:right;
+	position:absolute;
+	right: 0;
+	bottom: 0;
+	margin-left:auto;
+}
